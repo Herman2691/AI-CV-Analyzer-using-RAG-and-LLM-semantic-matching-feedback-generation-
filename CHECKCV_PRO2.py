@@ -8,7 +8,7 @@ load_dotenv()
 
 import streamlit as st
 import os
-from mistralai import Mistral
+from mistralai.client import MistralClient
 import json
 from typing import List, Dict
 import io
@@ -472,8 +472,7 @@ def extract_text_from_file(uploaded_file) -> str:
         st.error(f"Erreur lors de la lecture du fichier {uploaded_file.name}: {str(e)}")
         return ""
 
-def analyze_cv_with_mistral(client: Mistral, job_description: str, cv_content: str, cv_name: str) -> Dict:
-    """Analyse un CV avec Mistral AI"""
+def analyze_cv_with_mistral(client: MistralClient, job_description: str, cv_content: str, cv_name: str) -> dict:
     
     prompt = f"""Tu es un expert en recrutement. Analyse ce CV par rapport à l'offre d'emploi et réponds UNIQUEMENT avec un JSON valide (sans markdown, sans backticks).
 
