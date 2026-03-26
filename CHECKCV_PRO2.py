@@ -441,6 +441,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Initialisation de Mistral AI
+
+
+
 @st.cache_resource
 def init_mistral():
     """Initialise le client Mistral AI"""
@@ -448,7 +451,7 @@ def init_mistral():
     if not api_key:
         st.error("⚠️ Clé API Mistral non trouvée. Veuillez configurer MISTRAL_API_KEY dans le fichier .env")
         st.stop()
-    return Mistral(api_key=api_key)
+    return MistralClient(api_key=api_key)
 
 def extract_text_from_file(uploaded_file) -> str:
     """Extrait le texte d'un fichier uploadé"""
