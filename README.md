@@ -1,4 +1,4 @@
-# 🎯 CHECK CV - Analyseur de CV Professionnel avec IA
+# 🎯AI CV Analyzer using RAG and LLM (semantic matching + feedback generation)
 #Projet réaliser par HERMAN KANDOLO chercheur en IA
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
